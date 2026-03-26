@@ -172,7 +172,7 @@ span{
     content: ":";
     position: absolute;
     right: -22px;
-    top: 33%;
+    top: 45%;
     transform: translateY(-50%);
     font-size: 2.2rem;
 }
@@ -280,5 +280,9 @@ span{
         display: block;
         top: 6.6%;
     }
+
+    #countdown div:not(:last-child) span::after {
+    top: 25%;
+}
 }
 }

@@ -58,7 +58,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Countdown
 
-const fechaBoda = new Date("2026-12-06T00:00:00").getTime();
+const fechaBoda = new Date("2026-12-05T00:00:00").getTime();
 
 function actualizarCountdown() {
     const ahora = new Date().getTime();
