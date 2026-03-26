@@ -9,10 +9,11 @@ let rafId = null;
 
 function applyScale() {
     const scrolled = Math.min(Math.max(window.scrollY - main.offsetTop, 0), total);
-    const progress = total > 0 ? scrolled / total : 0;
+    const rect = main.getBoundingClientRect();
+    const progress = 1 - (rect.bottom / window.innerHeight);
 
     const start = isMobile ? 1.35 : 1.15;
-    const scale = start - ((start - 1.0) * progress);
+    const scale = start - ((start - 1.2) * progress);
 
     images.forEach(img => {
     if (isMobile && img.classList.contains("imagen1")) return;

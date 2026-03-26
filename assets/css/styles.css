@@ -199,11 +199,9 @@ span{
 @keyframes fadeIn{
     from{
         opacity: 0;
-        transform: translateY(20px);
     }
     to{
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -217,7 +215,7 @@ span{
 
     .contenedor_fondo{
         flex-direction: column;
-        height: auto;
+        height: 60vh;
     }
 
     .fondo{
@@ -238,7 +236,7 @@ span{
     }
 
     .texto_encima{
-        top: 77%;
+        top: 105%;
     }
 
     .ipsilon{
@@ -251,11 +249,11 @@ span{
         font-size: 1.3rem;
         width: 20rem;
         text-align: center;
-        top: 120%;
+        top: 160%;
     }
 
     #countdown{
-        top: 125%;
+        top: 165%;
         padding: 0.5rem;
         padding-bottom: 0.1rem;
     }
@@ -266,7 +264,7 @@ span{
 
     .nuestra{
         display: block;
-        top: 20%;
+        top: 5%;
     }
 }
 }
