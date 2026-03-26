@@ -4,12 +4,15 @@ const main = document.querySelector("#main");
 const images = document.querySelectorAll(".bg");
 
 window.addEventListener("scroll", () => {
+
     const rect = main.getBoundingClientRect();
     const total = main.offsetHeight - window.innerHeight;
     const scroll = Math.min(Math.max(-rect.top, 0), total);
     const progress = total > 0 ? scroll / total : 0;
 
-    const start = 1.15;
+    const isMobile = window.innerWidth <= 768;
+
+    const start = isMobile ? 1.35 : 1.15;
     const end = 1.0;
 
     const scale = start - ((start - end) * progress);
