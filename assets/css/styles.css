@@ -172,7 +172,7 @@ span{
     content: ":";
     position: absolute;
     right: -22px;
-    top: 45%;
+    top: 40%;
     transform: translateY(-50%);
     font-size: 2.2rem;
 }
