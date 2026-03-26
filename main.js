@@ -13,7 +13,7 @@ function applyScale() {
     const progress = 1 - (rect.bottom / window.innerHeight);
 
     const start = isMobile ? 1.35 : 1.15;
-    const scale = start - ((start - 1.2) * progress);
+    const scale = start - ((start - 1.1) * progress);
 
     images.forEach(img => {
     if (isMobile && img.classList.contains("imagen1")) return;
