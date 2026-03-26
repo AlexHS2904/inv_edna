@@ -48,7 +48,6 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
 
-    transform: scale(1.18);
     transform-origin: center;
     will-change: transform;
 }
@@ -186,6 +185,17 @@ span{
     animation: fadeIn 1.5s ease;
 }
 
+/* Transición */
+
+.fade {
+        opacity: 0;
+        transition: opacity 1.5s ease;
+        }
+
+        .fade.show {
+        opacity: 1;
+        }
+
 @keyframes fadeIn{
     from{
         opacity: 0;
@@ -228,7 +238,7 @@ span{
     }
 
     .texto_encima{
-        top: 95%;
+        top: 77%;
     }
 
     .ipsilon{
@@ -241,11 +251,11 @@ span{
         font-size: 1.3rem;
         width: 20rem;
         text-align: center;
-        top: 145%;
+        top: 120%;
     }
 
     #countdown{
-        top: 150%;
+        top: 125%;
         padding: 0.5rem;
         padding-bottom: 0.1rem;
     }
@@ -256,7 +266,7 @@ span{
 
     .nuestra{
         display: block;
-        top: 30%;
+        top: 20%;
     }
 }
 }

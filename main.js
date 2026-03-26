@@ -3,23 +3,56 @@
 const main = document.querySelector("#main");
 const images = document.querySelectorAll(".bg");
 
-window.addEventListener("scroll", () => {
+let isMobile = window.innerWidth <= 768;
+let total = main.offsetHeight - window.innerHeight;
+let rafId = null;
 
-    const rect = main.getBoundingClientRect();
-    const total = main.offsetHeight - window.innerHeight;
-    const scroll = Math.min(Math.max(-rect.top, 0), total);
-    const progress = total > 0 ? scroll / total : 0;
-
-    const isMobile = window.innerWidth <= 768;
+function applyScale() {
+    const scrolled = Math.min(Math.max(window.scrollY - main.offsetTop, 0), total);
+    const progress = total > 0 ? scrolled / total : 0;
 
     const start = isMobile ? 1.35 : 1.15;
-    const end = 1.0;
+    const scale = start - ((start - 1.0) * progress);
 
-    const scale = start - ((start - end) * progress);
-
-    images.forEach((img) => {
+    images.forEach(img => {
+    if (isMobile && img.classList.contains("imagen1")) return;
         img.style.transform = `scale(${scale})`;
     });
+}
+
+window.addEventListener("resize", () => {
+    isMobile = window.innerWidth <= 768;
+    total = main.offsetHeight - window.innerHeight;
+});
+
+window.addEventListener("scroll", () => {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+        rafId = null;
+        applyScale();
+    });
+}, { passive: true });
+
+if (document.readyState === "complete") {
+    applyScale();
+} else {
+    window.addEventListener("load", applyScale);
+}
+
+/* Transición*/
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        }
+    });
+    }, {
+    threshold: 0.6
+    });
+
+    document.querySelectorAll(".fade").forEach(el => {
+    observer.observe(el);
 });
 
 // Countdown
