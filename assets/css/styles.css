@@ -1,0 +1,183 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+:root{
+    --font-principal: 'Cormorant', serif;
+    --font-secundaria: 'Bodoni Moda', serif;
+
+    /* Colores */
+    --color-texto: rgb(255, 249, 243);
+    --color-overlay: rgba(0, 0, 0, 0.4);
+    --color-acento: #D4AF37;
+
+    /* Espaciado y otros */
+    --tracking-titulos: 3px;
+}
+
+/* Sección main -> Fondo principal */
+
+.contenedor_fondo{
+    display: flex;
+    height: 160vh;
+    width: 100%;
+}
+
+.fondo{
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg{
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.18);
+    transform-origin: center;
+    will-change: transform;
+}
+
+.imagen1{
+    background-image:
+        linear-gradient(var(--color-overlay), var(--color-overlay)),
+        url('../img/DSC_4821.jpg');
+}
+
+.imagen2{
+    background-image:
+        linear-gradient(var(--color-overlay), var(--color-overlay)),
+        url('../img/DSC_4817.jpg');
+}
+
+.imagen3{
+    background-image:
+        linear-gradient(var(--color-overlay), var(--color-overlay)),
+        url('../img/DSC_4819.jpg');
+}
+
+h1{
+    color: var(--color-texto);
+    font-family: var(--font-principal);
+    font-weight: 500;
+    font-size: 6.2rem;
+    letter-spacing: var(--tracking-titulos);
+    text-align: center;
+}
+
+span{
+    position:inherit;
+}
+
+.texto_encima {
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.ipsilon{
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+    height: 32rem;
+    width: 22rem;
+}
+
+.fecha{
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 5px;
+
+    color: var(--color-texto);
+    font-family: var(--font-principal);
+    font-weight: 300;
+    font-size: 2.2rem;
+    letter-spacing: var(--tracking-titulos);
+}
+
+/* Countdown */
+
+#countdown{
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 20px;
+    color: var(--color-texto);
+    font-family: "Quicksand", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    border: 0.2rem solid var(--color-texto);
+    border-radius: 0.6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#countdown div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#countdown span{
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+#countdown p{
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.evento-hoy{
+    font-family: var(--font-secundaria);
+    font-size: 3rem;
+    letter-spacing: 6px;
+    text-align: center;
+    color: var(--color-texto);
+
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sección nosotros -> Música, padrinos, etc.*/
+
+
+/* M O B I L E*/
+
+@media screen and (max-width: 480px) {
+    .fondo{
+        flex-direction: column;
+    }
+}
