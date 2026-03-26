@@ -1,4 +1,4 @@
-// Zoom imágenes
+//  Zoom imágenes
 
 const main = document.querySelector("#main");
 const images = document.querySelectorAll(".bg");
@@ -8,7 +8,6 @@ let total = main.offsetHeight - window.innerHeight;
 let rafId = null;
 
 function applyScale() {
-    const scrolled = Math.min(Math.max(window.scrollY - main.offsetTop, 0), total);
     const rect = main.getBoundingClientRect();
     const progress = 1 - (rect.bottom / window.innerHeight);
 
@@ -16,7 +15,7 @@ function applyScale() {
     const scale = start - ((start - 1.1) * progress);
 
     images.forEach(img => {
-    if (isMobile && img.classList.contains("imagen1")) return;
+        if (isMobile && img.classList.contains("imagen1")) return;
         img.style.transform = `scale(${scale})`;
     });
 }
@@ -24,6 +23,7 @@ function applyScale() {
 window.addEventListener("resize", () => {
     isMobile = window.innerWidth <= 768;
     total = main.offsetHeight - window.innerHeight;
+    moverContenido();
 });
 
 window.addEventListener("scroll", () => {
@@ -40,23 +40,45 @@ if (document.readyState === "complete") {
     window.addEventListener("load", applyScale);
 }
 
-/* Transición*/
+//  Mover fecha y countdown según pantalla
+
+function moverContenido() {
+    const esMobile = window.innerWidth <= 480;
+
+    const panelDos = document.querySelector('.fondo--principal');
+    const panelTres = document.querySelector('.fondo--tercero');
+
+    const fecha = document.querySelector('.fecha');
+    const countdown = document.getElementById('countdown');
+
+    if (!panelDos || !panelTres || !fecha || !countdown) return;
+
+    if (esMobile) {
+        panelTres.appendChild(fecha);
+        panelTres.appendChild(countdown);
+    } else {
+        panelDos.appendChild(fecha);
+        panelDos.appendChild(countdown);
+    }
+}
+
+//  Transición
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-        entry.target.classList.add("show");
+            entry.target.classList.add("show");
         }
     });
-    }, {
+}, {
     threshold: 0.6
-    });
+});
 
-    document.querySelectorAll(".fade").forEach(el => {
+document.querySelectorAll(".fade").forEach(el => {
     observer.observe(el);
 });
 
-// Countdown
+// ── Countdown ──
 
 const fechaBoda = new Date("2026-12-05T00:00:00").getTime();
 
@@ -71,16 +93,30 @@ function actualizarCountdown() {
         return;
     }
 
-    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+    const dias    = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    const horas   = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
     const segundos = Math.floor((diferencia / 1000) % 60);
 
-    document.getElementById("dias").textContent = dias;
-    document.getElementById("horas").textContent = horas;
-    document.getElementById("minutos").textContent = minutos;
-    document.getElementById("segundos").textContent = segundos;
+    actualizarValor("dias",     String(dias).padStart(2, "0"));
+    actualizarValor("horas",    String(horas).padStart(2, "0"));
+    actualizarValor("minutos",  String(minutos).padStart(2, "0"));
+    actualizarValor("segundos", String(segundos).padStart(2, "0"));
 }
 
+function actualizarValor(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.textContent === value) return;
+
+    el.classList.remove("animate");
+    void el.offsetWidth;
+    el.textContent = value;
+    el.classList.add("animate");
+}
+
+// ── Init ──
+
+moverContenido();
 setInterval(actualizarCountdown, 1000);
 actualizarCountdown();

@@ -11,38 +11,47 @@ body, html {
     font-style: normal;
 }
 
-:root{
+:root {
     --font-principal: 'Cormorant', serif;
     --font-secundaria: 'Bodoni Moda', serif;
     --font-terciaria: 'Amalfi', cursive;
 
-    /* Colores */
     --color-texto: rgb(255, 249, 243);
     --color-overlay: rgba(0, 0, 0, 0.4);
-    --color-acento: #D4AF37;
+    --color-secundario: rgb(106, 91, 44);
 
-    /* Espaciado y otros */
     --tracking-titulos: 3px;
 }
 
-/* Sección main -> Fondo principal */
+/*  Contenedor  */
 
-.contenedor_fondo{
+.contenedor_fondo {
     display: flex;
-    height: 160vh;
+    height: 100vh;
     width: 100%;
 }
 
-.fondo{
+/*  Paneles  */
+
+.fondo {
     flex: 1;
-    height: 100%;
     overflow: hidden;
     position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    padding: 2rem 1rem;
 }
 
-.bg{
+/*  Fondo decorativo  */
+
+.bg {
     position: absolute;
     inset: 0;
+    z-index: 0;
 
     background-size: cover;
     background-position: center;
@@ -52,101 +61,96 @@ body, html {
     will-change: transform;
 }
 
-.imagen1{
+.fondo > *:not(.bg) {
+    position: relative;
+    z-index: 1;
+}
+
+/*  Imágenes  */
+
+.imagen1 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
         url('../img/DSC_4821.jpg');
 }
 
-.imagen2{
+.imagen2 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
         url('../img/DSC_4817.jpg');
 }
 
-.imagen3{
+.imagen3 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
         url('../img/DSC_4819.jpg');
 }
 
-h1{
+/*  Tipografía  */
+
+h1 {
+    position: relative;
+    z-index: 1;
     color: var(--color-texto);
     font-family: var(--font-principal);
     font-weight: 500;
     font-size: 6.2rem;
     letter-spacing: var(--tracking-titulos);
     text-align: center;
+    margin: 0;
 }
 
-span{
-    position:inherit;
-}
+/*  Nuestra  */
 
-.nuestra{
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    border-radius: 5px;
-    width: 20rem;
-
+.nuestra {
     color: var(--color-texto);
     font-family: var(--font-terciaria);
     font-weight: 300;
     font-size: 1.5rem;
     letter-spacing: var(--tracking-titulos);
     text-align: center;
+    width: 20rem;
+    padding: 10px;
     display: none;
 }
 
+/*  Texto encima (h1 + ipsilon)  */
+
 .texto_encima {
-    position: absolute;
-    top: 77%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    font-size: 24px;
-    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
-.ipsilon{
+.and {
     position: absolute;
-    top: 47%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    font-size: 24px;
-    border-radius: 5px;
-    height: 32rem;
-    width: 22rem;
+    z-index: 0;
 }
 
-.fecha{
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    font-size: 24px;
-    border-radius: 5px;
+.ipsilon {
+    height: 22rem;
+    width: 16rem;
+    display: block;
+}
 
+/*  Fecha  */
+
+.fecha {
     color: var(--color-texto);
     font-family: var(--font-principal);
     font-weight: 300;
     font-size: 2.2rem;
     letter-spacing: var(--tracking-titulos);
+    text-align: center;
 }
 
-/* Countdown */
+/*  Countdown  */
 
-#countdown{
-    position: absolute;
-    top: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    
+#countdown,
+#countdown-mobile {
     display: flex;
     gap: 25px;
     color: var(--color-texto);
@@ -155,20 +159,18 @@ span{
     text-align: center;
     border: 0.1rem solid var(--color-texto);
     border-radius: 0.6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    text-align: center;
-
-    display: flex;
+    padding: 0.5rem 1rem;
     align-items: center;
     justify-content: center;
 }
 
-#countdown div {
+#countdown div,
+#countdown-mobile div {
     position: relative;
 }
 
-#countdown div:not(:last-child) span::after {
+#countdown div:not(:last-child) span::after,
+#countdown-mobile div:not(:last-child) span::after {
     content: ":";
     position: absolute;
     right: -22px;
@@ -177,113 +179,125 @@ span{
     font-size: 2.2rem;
 }
 
-#countdown span{
+#countdown span,
+#countdown-mobile span {
     font-size: 2.5rem;
     letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.267);
 }
 
-#countdown p{
+#countdown p,
+#countdown-mobile p {
     font-size: 1.2rem;
     opacity: 0.8;
+    margin: 0;
 }
 
-.evento-hoy{
+/*  Desktop: ocultar duplicados del panel 3  */
+
+.mobile-fecha,
+.mobile-countdown {
+    display: none;
+}
+
+/*  Animación countdown  */
+
+#countdown span.animate,
+#countdown-mobile span.animate {
+    animation: pulseFade 0.5s ease;
+}
+
+@keyframes pulseFade {
+    0%   { opacity: 0; transform: translateY(6px) scale(0.95); }
+    50%  { transform: translateY(-2px) scale(1.05); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/*  Evento hoy  */
+
+.evento-hoy {
     font-family: var(--font-secundaria);
     font-size: 3rem;
     letter-spacing: 6px;
     text-align: center;
     color: var(--color-texto);
-
     animation: fadeIn 1.5s ease;
 }
 
-/* Transición */
+/*  Transiciones  */
 
 .fade {
-        opacity: 0;
-        transition: opacity 2s ease;
-        }
-
-        .fade.show {
-        opacity: 1;
-        }
-
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
-/* Sección nosotros -> Música, padrinos, etc.*/
+.fade.show {
+    opacity: 1;
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 
-/* M O B I L E*/
+/*  Mobile  */
 
-@media screen and (max-width: 480px) {
-    @media (max-width: 768px){
+@media (max-width: 480px) {
 
-    .contenedor_fondo{
+    .contenedor_fondo {
         flex-direction: column;
-        height: 60vh;
+        height: auto;
     }
 
-    .fondo{
+    .fondo {
         width: 100%;
-        aspect-ratio: 1 / 1;
-        flex: none;
+        min-height: 70vh;
+        gap: 0.8rem;
+        padding: 3rem 1rem 2rem;
     }
 
-    .bg{
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-    }
-
-    h1{
+    h1 {
         font-size: 3.2rem;
     }
 
-    .texto_encima{
-        top: 105%;
-    }
-
-    .ipsilon{
-        top: 45%;
+    .ipsilon {
         height: 16rem;
-        width: 8rem;
+        width: 12rem;
     }
 
-    .fecha{
+    .fecha {
         font-size: 1.3rem;
-        width: 20rem;
         text-align: center;
-        top: 160%;
     }
 
-    #countdown{
-        top: 165%;
+    .nuestra {
+        display: block;
+    }
+
+    .desktop-fecha,
+    .desktop-countdown {
+        display: none;
+    }
+
+    .mobile-fecha,
+    .mobile-countdown {
+        display: flex;
+    }
+
+    .mobile-fecha {
+        display: block;
+    }
+
+    #countdown-mobile {
         padding: 0.5rem;
-        padding-bottom: 0.1rem;
         width: 80%;
-        text-align: center;
     }
 
-    #countdown span{
+    #countdown-mobile span {
         font-size: 1.5rem;
     }
 
-    .nuestra{
-        display: block;
-        top: 6.6%;
+    #countdown-mobile div:not(:last-child) span::after {
+        font-size: 1.5rem;
     }
-
-    #countdown div:not(:last-child) span::after {
-    top: 45%;
-    font-size: 1.5rem;
-}
-}
 }
