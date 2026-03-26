@@ -249,8 +249,12 @@ h1 {
         height: auto;
     }
 
+    .nuestra{
+        font-size: 2.2rem;
+    }
+
     .texto_encima{
-        padding-top: 20rem;
+        padding-top: 30rem;
     }
 
     .fondo {
@@ -261,18 +265,18 @@ h1 {
     }
 
     h1 {
-        font-size: 3.2rem;
+        font-size: 5rem;
     }
 
     .ipsilon {
-        height: 16rem;
-        width: 12rem;
+        height: 25rem;
+        width: 20rem;
     }
 
     .fecha {
-        font-size: 1.3rem;
+        font-size: 2.3rem;
         text-align: center;
-        margin-top: 20rem;
+        padding-top: 30rem;
     }
 
     .nuestra {
