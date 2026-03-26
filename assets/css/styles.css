@@ -282,7 +282,8 @@ span{
     }
 
     #countdown div:not(:last-child) span::after {
-    top: 25%;
+    top: 45%;
+    font-size: 1.5rem;
 }
 }
 }
