@@ -18,7 +18,7 @@ body, html {
 
     --color-texto: rgb(255, 249, 243);
     --color-overlay: rgba(0, 0, 0, 0.4);
-    --color-secundario: rgb(106, 91, 44);
+    --color-secundario: #8d8680;
 
     --tracking-titulos: 3px;
 }
@@ -35,7 +35,7 @@ body, html {
 
 .fondo {
     flex: 1;
-    overflow: hidden;
+    overflow: clip;
     position: relative;
 
     display: flex;
@@ -93,7 +93,7 @@ h1 {
     z-index: 1;
     color: var(--color-texto);
     font-family: var(--font-principal);
-    font-weight: 500;
+    font-weight: 300;
     font-size: 6.2rem;
     letter-spacing: var(--tracking-titulos);
     text-align: center;
@@ -152,7 +152,7 @@ h1 {
 #countdown,
 #countdown-mobile {
     display: flex;
-    gap: 25px;
+    gap: 30px;
     color: var(--color-texto);
     font-family: "Quicksand", sans-serif;
     font-weight: 300;
@@ -174,30 +174,24 @@ h1 {
     content: ":";
     position: absolute;
     right: -22px;
-    top: 45%;
+    top: 20%;
     transform: translateY(-50%);
-    font-size: 2.2rem;
+    font-size: 1.5rem;
 }
 
 #countdown span,
 #countdown-mobile span {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.267);
 }
 
 #countdown p,
 #countdown-mobile p {
-    font-size: 1.2rem;
+    padding-top: 0.3rem;
+    font-size: 1rem;
     opacity: 0.8;
     margin: 0;
-}
-
-/*  Desktop: ocultar duplicados del panel 3  */
-
-.mobile-fecha,
-.mobile-countdown {
-    display: none;
 }
 
 /*  Animación countdown  */
@@ -224,6 +218,28 @@ h1 {
     animation: fadeIn 1.5s ease;
 }
 
+/* Save the date*/
+
+/* Canción */
+
+#save{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EFE9E3;
+    width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden
+}
+
+.titulo{
+    padding: 1rem;
+    color: var(--color-secundario);
+    font-family: var(--font-principal);
+    font-size: 0.8rem;
+}
+
+
 /*  Transiciones  */
 
 .fade {
@@ -247,6 +263,7 @@ h1 {
     .contenedor_fondo {
         flex-direction: column;
         height: auto;
+        overflow-x: clip;
     }
 
     .nuestra{
@@ -274,13 +291,14 @@ h1 {
     }
 
     .fecha {
-        font-size: 2.3rem;
+        font-size: 1.6rem;
         text-align: center;
         padding-top: 15rem;
     }
 
     .nuestra {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        margin: 0;
         display: block;
     }
 
@@ -289,10 +307,6 @@ h1 {
         display: none;
     }
 
-    .mobile-fecha,
-    .mobile-countdown {
-        display: flex;
-    }
 
     .mobile-fecha {
         display: block;
