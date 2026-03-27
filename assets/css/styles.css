@@ -71,19 +71,19 @@ body, html {
 .imagen1 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
-        url('../img/DSC_4821.jpg');
+        url('../img/DSC_4821.avif');
 }
 
 .imagen2 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
-        url('../img/DSC_4817.jpg');
+        url('../img/DSC_4817.avif');
 }
 
 .imagen3 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
-        url('../img/DSC_4819.jpg');
+        url('../img/DSC_4819.avif');
 }
 
 /*  Tipografía  */
@@ -227,7 +227,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #EFE9E3;
+    background-color: #f7f4f1;
     box-sizing: border-box;
     overflow-x: hidden
 }
@@ -320,7 +320,6 @@ h1 {
     padding-left: 1.2rem;
     padding-right: 0.2rem;
     font-family: var(--font-terciaria);
-    margin: 0;
     line-height: 1;
 }
 
@@ -334,6 +333,8 @@ h1 {
     padding-bottom: 1rem;
     font-size: 2.5rem;
 }
+
+/* Evento */
 
 a{
     text-decoration: none;
@@ -355,6 +356,40 @@ a{
 
 .add_event:hover{
     background-color: #395138a1;
+}
+
+.padres{
+    padding-left: 1.2rem;
+    padding-right: 0.2rem;
+    font-family: var(--font-terciaria);
+    line-height: 2.5;
+}
+
+.boton_add{
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
+}
+/* Padres */
+
+.contenedor_padres{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ipsilon2{
+    font-size: 2rem;
+    color: var(--color-secundario);
+    font-family: var(--font-secundaria);
+}
+
+.nombres_padres{
+    font-size: 1.8rem;
+    color: var(--color-secundario);
+    font-family: var(--font-principal);
 }
 
 /*  Transiciones  */
@@ -443,20 +478,20 @@ a{
     }
 
     .texto{
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 
     .texto2{
-        font-size: 2.1rem;
+        font-size: 2.3rem;
     }
 
     .date{
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .titulo{
-    font-size: 1.1rem;
-}
+        font-size: 1.2rem;
+    }
 
 
     .cancion{
@@ -476,6 +511,24 @@ a{
     .progress {
         height: 100%;
         width: 0%;
+    }
+
+    .contenedor_padres{
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .contenedor_padres{
+        gap: 0.5rem;
+    }
+
+    .ipsilon2{
+        font-size: 2.2rem;
+        margin: 0;
+    }
+
+    .nombres_padres{
+        font-size: 1.3rem;
     }
 
 }

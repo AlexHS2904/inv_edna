@@ -8,12 +8,12 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Preconnect (acelera carga de fuentes) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fuentes optimizadas (solo pesos necesarios) -->
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
 
 </head>
 
@@ -71,7 +71,7 @@
                     </svg>
                 </button>
 
-                <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" loop></audio>
+                <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" preload="none"></audio>
 
                 <div class="progress-container" id="progressContainer">
                     <div class="progress" id="progress"></div>
@@ -79,7 +79,7 @@
             </div>
         </div>
 
-        <div class="texto">
+        <div class="texto fade">
             <p>
             El día más esperado de nuestras vidas finalmente ha llegado;
             acompáñennos en nuestra boda y sean parte de nuestra historia de amor.
@@ -92,12 +92,39 @@
             </p>
         </div>
 
-        <a href="assets/ics/evento.ics" download>
-            <button class="add_event">Agendar evento</button>
-        </a>
+        <div class="boton_add fade">
+            <a href="assets/ics/evento.ics" download>
+                <button class="add_event">Agendar evento</button>
+            </a>
+        </div>
+        
+
+        <div class="texto fade">
+            <p>CON LA BENDICIÓN DE DIOS Y EL AMOR DE <br> <span class="padres">nuestros padres</span></p>
+        </div>
+
+        <div class="contenedor_padres fade">
+            <div class="paternos">
+                <p class="nombres_padres">
+                    Sergio Rojo Medina
+                    <br>
+                    Blanca Aracely Castillo Alcantar
+                </p>
+            </div>
+            <div class="ipsilon2">
+                <p class="ipsilon2"> &</p>
+            </div>
+            <div class="maternos">
+                <p class="nombres_padres">
+                    Sergio Rojo Medina
+                    <br>
+                    Blanca Aracely Castillo Alcantar
+                </p>
+            </div>
+        </div>
 
     </section>
 
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
