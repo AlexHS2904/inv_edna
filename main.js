@@ -186,6 +186,12 @@ document.addEventListener('mousemove', (e) => {
     audio.currentTime = percent * audio.duration;
 });
 
+//Agendar evento
+
+document.querySelector('.add_event').addEventListener('click', () => {
+    window.location.href = '/evento.ics';
+});
+
 // ── Init ──
 
 moverContenido();
