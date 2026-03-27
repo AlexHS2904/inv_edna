@@ -115,6 +115,77 @@ function actualizarValor(id, value) {
     el.classList.add("animate");
 }
 
+// Pausa y play
+
+const audio = document.getElementById('audio');
+const btn = document.getElementById('btn-audio');
+const iconPlay = document.getElementById('icon-play');
+const iconPause = document.getElementById('icon-pause');
+
+btn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        iconPlay.style.display = 'none';
+        iconPause.style.display = 'block';
+    } else {
+        audio.pause();
+        iconPlay.style.display = 'block';
+        iconPause.style.display = 'none';
+    }
+});
+
+// Barra música
+
+const progress = document.getElementById('progress');
+const progressContainer = document.getElementById('progressContainer');
+
+audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + '%';
+});
+
+audio.addEventListener('timeupdate', () => {
+    if (!audio.duration) return;
+
+    const percent = (audio.currentTime / audio.duration) * 100;
+    progress.style.width = percent + '%';
+});
+
+progressContainer.addEventListener('click', (e) => {
+    const width = progressContainer.clientWidth;
+    const clickX = e.offsetX;
+
+    audio.currentTime = (clickX / width) * audio.duration;
+});
+
+let isDragging = false;
+
+progressContainer.addEventListener('mousedown', () => {
+    isDragging = true;
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isDragging) {
+        progress.style.width = percent + '%';
+    }
+
+    const rect = progressContainer.getBoundingClientRect();
+    let offsetX = e.clientX - rect.left;
+
+    
+    if (offsetX < 0) offsetX = 0;
+    if (offsetX > rect.width) offsetX = rect.width;
+
+    const percent = offsetX / rect.width;
+    audio.currentTime = percent * audio.duration;
+});
+
 // ── Init ──
 
 moverContenido();

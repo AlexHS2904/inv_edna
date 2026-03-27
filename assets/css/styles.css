@@ -233,12 +233,61 @@ h1 {
 }
 
 .titulo{
-    padding: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
     color: var(--color-secundario);
     font-family: var(--font-principal);
-    font-size: 0.8rem;
+    font-size: 1.1rem;
+    margin: 0;
 }
 
+.barra{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.cancion{
+    width: 15rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.notas{
+    width: 1.5rem;
+}
+
+#btn-audio {
+    background: none;
+    border: none;
+    padding: 0;
+
+    color: #ddc6ad;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#btn-audio:hover {
+    opacity: 1;
+}
+
+.progress-container {
+    width: 60%;
+    height: 6px;
+    margin-top: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #ddc6ad;
+    border-radius: 10px;
+}
 
 /*  Transiciones  */
 
