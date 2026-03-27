@@ -378,6 +378,7 @@ a{
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-bottom: 2rem;
 }
 
 .ipsilon2{
@@ -390,6 +391,15 @@ a{
     font-size: 1.8rem;
     color: var(--color-secundario);
     font-family: var(--font-principal);
+}
+
+/* Imagen de fondo 2*/
+
+#fondo2{
+    background-image: url('../img/DSC_4826.avif');
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
 }
 
 /*  Transiciones  */
@@ -529,6 +539,12 @@ a{
 
     .nombres_padres{
         font-size: 1.3rem;
+    }
+
+    #fondo2{
+        aspect-ratio: 1 / 1;
+        height: auto;
+        background-position: center;
     }
 
 }
