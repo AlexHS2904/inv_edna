@@ -254,7 +254,7 @@ h1 {
     }
 
     .texto_encima{
-        padding-top: 27rem;
+        padding-top: 18rem;
     }
 
     .fondo {
@@ -265,21 +265,22 @@ h1 {
     }
 
     h1 {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 
     .ipsilon {
-        height: 25rem;
-        width: 20rem;
+        height: 22rem;
+        width: 17rem;
     }
 
     .fecha {
         font-size: 2.3rem;
         text-align: center;
-        padding-top: 27rem;
+        padding-top: 15rem;
     }
 
     .nuestra {
+        font-size: 2rem;
         display: block;
     }
 
