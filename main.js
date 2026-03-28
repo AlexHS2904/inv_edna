@@ -171,20 +171,51 @@ document.addEventListener('mouseup', () => {
 });
 
 document.addEventListener('mousemove', (e) => {
-    if (!isDragging) {
-        progress.style.width = percent + '%';
-    }
+    if (!isDragging) return;
 
     const rect = progressContainer.getBoundingClientRect();
     let offsetX = e.clientX - rect.left;
 
-    
     if (offsetX < 0) offsetX = 0;
     if (offsetX > rect.width) offsetX = rect.width;
 
     const percent = offsetX / rect.width;
+
     audio.currentTime = percent * audio.duration;
+    progress.style.width = percent * 100 + '%';
 });
+
+// Galería 2
+
+const panels = [
+  document.getElementById('p1'),
+  document.getElementById('p2'),
+  document.getElementById('p3'),
+];
+
+const overlays = document.querySelector('.overlays');
+
+function onScroll() {
+  const scrollY   = window.scrollY;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+  const startAt  = 0.25;
+  const raw      = scrollY / maxScroll;
+  const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
+
+  const scale   = 1 - progress * 0.1;
+  const opacity = 1 - progress * 0.25;
+  const gap     = progress * 3;
+
+  overlays.style.gap = `${gap}px`;
+
+  panels.forEach(p => {
+    p.style.transform = `scale(${scale})`;
+    p.style.opacity   = opacity;
+  });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
 
 //Agendar evento
 
