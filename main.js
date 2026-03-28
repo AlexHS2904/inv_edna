@@ -188,31 +188,36 @@ document.addEventListener('mousemove', (e) => {
 // Galería 2
 
 const panels = [
-  document.getElementById('p1'),
-  document.getElementById('p2'),
-  document.getElementById('p3'),
+    document.getElementById('p1'),
+    document.getElementById('p2'),
+    document.getElementById('p3'),
 ];
 
 const overlays = document.querySelector('.overlays');
 
+const bg2 = document.querySelector('.bg2');
+
 function onScroll() {
-  const scrollY   = window.scrollY;
-  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollY   = window.scrollY;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const raw       = scrollY / maxScroll;
 
-  const startAt  = 0.25;
-  const raw      = scrollY / maxScroll;
-  const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
+    const bg2Scale = 1 + raw * 0.08;
+    bg2.style.transform = `scale(${bg2Scale})`;
 
-  const scale   = 1 - progress * 0.1;
-  const opacity = 1 - progress * 0.25;
-  const gap     = progress * 3;
+    const startAt  = 0.75;
+    const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
-  overlays.style.gap = `${gap}px`;
+    const scale   = 1 - progress * 0.1;
+    const opacity = 1 - progress * 0.35;
+    const gap     = progress * 2;
 
-  panels.forEach(p => {
-    p.style.transform = `scale(${scale})`;
-    p.style.opacity   = opacity;
-  });
+    overlays.style.gap = `${gap}px`;
+
+    panels.forEach(p => {
+        p.style.transform = `scale(${scale})`;
+        p.style.opacity   = opacity;
+    });
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
