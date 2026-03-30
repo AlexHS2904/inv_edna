@@ -396,7 +396,7 @@ a{
 /* Imagen de fondo 2*/
 
 #fondo2{
-    height: 200vh;
+    height: 100vh;
 }
 
 .scene {
@@ -440,6 +440,216 @@ a{
     object-fit: cover;
     object-position: center;
     display: block;
+}
+
+/* Itinerario */
+
+.wt-section {
+    width: 100%;
+    background: var(--color-fondo);
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Itinerario*/
+.it {
+    font-family: var(--font-terciaria);
+    font-size: 2rem;
+    color: var(--color-secundario);
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+  /*  Wraper timeline */
+.wt-wrapper {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 700px;
+    padding-bottom: 100px;
+}
+
+  /*  Línea horizontal  */
+.wt-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-secundario);
+    transform: translateY(-50%);
+}
+
+  /* ── Línea vertical izquierda ── */
+.wt-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 32%;
+    top: calc(50% - 90px);
+    width: 2px;
+    height: 180px;
+    background: var(--color-secundario);
+}
+
+  /* ── Línea vertical derecha ── */
+.wt-line-right {
+    position: absolute;
+    left: 68%;
+    top: calc(50% - 90px);
+    width: 2px;
+    height: 180px;
+    background: var(--color-secundario);
+}
+
+  /* ===== ITEMS ===== */
+.wt-item {
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+  /* CEREMONIA — arriba, alineada a línea izquierda */
+.wt-item-top {
+    left: 32%;
+    bottom: calc(50% + 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+  /* RECEPCIÓN — abajo, alineada a línea derecha */
+.wt-item-bottom {
+    left: 68%;
+    top: calc(50% + 100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+  /* ===== ICONOS SVG ===== */
+.wt-icon {
+    width: 150px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.wt-icon img {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--color-linea);
+    stroke-width: 1;
+}
+
+.wt-title,
+.wt-time {
+    margin: 0;
+}
+
+  /* Contenido timeline */
+.wt-title {
+    font-family: var(--font-principal);
+    color: var(--color-secundario);
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    letter-spacing: 4px;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.wt-time {
+    font-family: var(--font-principal);
+    color: var(--color-secundario);
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    letter-spacing: 1px;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 2rem ;
+}
+
+
+/* Ubicaciones*/
+
+.ubicaciones{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding-bottom: 2rem;
+}
+
+.ubi{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.2rem;
+    width: 20rem;
+    height: 15rem;
+
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(223, 189, 159, 0.435);
+}
+
+.ubi::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.ubi > * {
+    position: relative;
+    z-index: 1;
+}
+
+.ubi p{
+    font-family: var(--font-principal);
+    color: var(--color-texto);
+    font-size: 2rem;
+}
+
+.iglesia, .jardin{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.iglesia{
+    background-image: url('../img/IMG_3225.avif');
+}
+
+.jardin{
+    background-image: url('../img/sanjose.avif');
+}
+
+.ver_ubi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+    background-color: #a1a1a1;
+    border: none;
+    color: white;
+    padding: 10px 30px 10px 30px;
+    font-family: var(--font-principal);
+    font-size: 1.3rem;
+}
+
+.ver_ubi:hover{
+    background-color: #395138a1;
 }
 
 /*  Transiciones  */
@@ -600,5 +810,38 @@ a{
 
     .panel-img{
         height: auto;
+    }
+
+    .wt-wrapper {
+        min-height: 600px;
+
+    }
+
+    .it{
+        margin-bottom: 1rem;
+    }
+
+    .wt-icon {
+        width: 120px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wt-wrapper::before {
+        left: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .wt-wrapper::after { left: 28%; }
+    .wt-line-right { left: 72%; }
+    .wt-item-top { left: 28%; bottom: calc(50% + 80px); }
+    .wt-item-bottom { left: 72%; top: calc(50% + 80px); }
+
+
+    .ubicaciones{
+        flex-direction: column;
+        gap: 2rem;
     }
 }
