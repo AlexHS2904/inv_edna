@@ -74,7 +74,7 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.6
 });
 
-document.querySelectorAll(".fade").forEach(el => {
+document.querySelectorAll(".fade, .fade-slide").forEach(el => {
     observer.observe(el);
 });
 
