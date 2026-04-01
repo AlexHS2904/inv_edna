@@ -388,6 +388,7 @@ a{
 }
 
 .nombres_padres{
+    padding-top: 3rem;
     font-size: 1.8rem;
     color: var(--color-secundario);
     font-family: var(--font-principal);
@@ -718,6 +719,7 @@ p{
 /* Historia de amor */
 
 #historia{
+    background-color: #f7f4f1;;
     padding-top: 5rem;
     display: flex;
     justify-content: center;
