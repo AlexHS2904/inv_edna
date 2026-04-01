@@ -671,7 +671,7 @@ a{
     text-align: center;
     align-items: center;
     flex-direction: row;
-    gap: 10px;
+    gap: 7px;
 }
 
 .hym p{
@@ -681,17 +681,101 @@ a{
 }
 
 .hym img{
-    width: 8rem;
+    width: 10rem;
+}
+
+.no{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.3rem;
 }
 
 .noniños{
+    margin-top: -30px;
     width: 10rem;
-    margin: 0;
+    line-height: 3;
 }
 
 p{
     margin: 0;
 }
+
+/* Fondo 3 */
+
+#fondo3{
+    overflow-x: hidden;
+    background-image: url('../img/DSC_3723.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 80vh;
+}
+
+/* Historia de amor */
+
+#historia{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1.3rem;
+}
+
+.titulo2 {
+    font-family: var(--font-principal);
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: #7a7671;
+    text-align: center;
+    position: relative;
+}
+
+.amor {
+    display: block;
+    font-family: var(--font-terciaria);
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    margin-top: -50px;
+    padding-left: 400px;
+}
+
+.texto3{
+    font-family: var(--font-principal);
+    color: var(--color-secundario);
+    font-size: 1.3rem;
+    width: 80%;;
+}
+
+.final{
+    padding-bottom: 2rem;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 300px 300px;
+  gap: 8px;
+}
+
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.foto-1 { grid-column: 1;        grid-row: 1; }
+.foto-2 { grid-column: 2;        grid-row: 1 / span 2; }
+.foto-3 { grid-column: 1;        grid-row: 2; }
+.foto-4 { grid-column: 1;        grid-row: 3; }
+.foto-5 { grid-column: 2;        grid-row: 3; }
 
 /*  Transiciones  */
 
@@ -840,6 +924,7 @@ p{
     }
 
     .nombres_padres{
+        padding-top: 1.2rem;
         font-size: 1.3rem;
     }
 
@@ -895,5 +980,15 @@ p{
     .ubicaciones{
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .titulo2 {
+        font-size: 1.7rem;
+    }
+
+    .amor {
+        font-size: 1.7rem;
+        padding-top: 10px;
+        padding-left: 200px;
     }
 }
