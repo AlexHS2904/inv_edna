@@ -205,10 +205,10 @@ function onScroll() {
     const bg2Scale = 1 + raw * 0.08;
     bg2.style.transform = `scale(${bg2Scale})`;
 
-    const startAt  = 0.55;
+    const startAt  = 0.25;
     const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
-    const scale   = 1 - progress * 0.2;
+    const scale   = 1 - progress * 0.3;
     const opacity = 1 - progress * 0.35;
     const gap     = progress * 2;
 

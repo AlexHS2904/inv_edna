@@ -2,6 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #f7f4f1;
 }
 
 @font-face {
@@ -450,6 +451,7 @@ a{
     background: var(--color-fondo);
     margin: 0;
     overflow: hidden;
+    background-color: #f7f4f1;
 }
 
 /* Itinerario*/
@@ -672,7 +674,7 @@ a{
     text-align: center;
     align-items: center;
     flex-direction: row;
-    gap: 7px;
+    gap: 5px;
 }
 
 .hym p{
@@ -719,6 +721,8 @@ p{
 /* Historia de amor */
 
 #historia{
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #f7f4f1;;
     padding-top: 5rem;
     display: flex;
@@ -727,7 +731,7 @@ p{
     text-align: center;
     flex-direction: column;
     overflow-x: hidden;
-    gap: 1.3rem;
+    gap: 1.6rem;
 }
 
 .titulo2 {
@@ -751,8 +755,8 @@ p{
 .texto3{
     font-family: var(--font-principal);
     color: var(--color-secundario);
-    font-size: 1.3rem;
-    width: 80%;;
+    font-size: 1.5rem;
+    width: 60%;;
 }
 
 .final{
@@ -760,17 +764,18 @@ p{
 }
 
 .galeria {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px 300px 300px;
-  gap: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px 300px;
+    gap: 8px;
+    padding-bottom: 5rem;
 }
 
 .galeria img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .foto-1 { grid-column: 1;        grid-row: 1; }
@@ -778,6 +783,138 @@ p{
 .foto-3 { grid-column: 1;        grid-row: 2; }
 .foto-4 { grid-column: 1;        grid-row: 3; }
 .foto-5 { grid-column: 2;        grid-row: 3; }
+
+/* Lluvia de sobres */
+
+#sobres{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #eee3d5;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1.6rem;
+    margin: auto auto;
+    padding-top: 2rem;
+}
+
+#sobres img{
+    margin-top: -1rem;
+    margin-bottom: -3rem;
+    width: 16rem;
+}
+
+/* Fondo 4*/
+
+#fondo4{
+    padding-top: 3rem;
+    overflow-x: hidden;
+    min-height: 80vh;
+}
+
+#fondo4 div{
+    min-height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../img/DSC_3718.avif');
+}
+
+/* Hospedaje*/
+
+#hospedaje{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    gap: 1.6rem;
+    margin: auto auto;
+    padding-top: 2rem;
+
+    font-family: var(--font-principal);
+}
+
+.hoteles {
+    margin: 0 auto;
+    width: 90%;
+}
+
+.fila {
+    display: grid;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    justify-items: center;
+}
+
+.fila-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.fila-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 660px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.card {
+    text-align: center;
+    width: 100%;
+}
+
+.card h2 {
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--color-secundario);
+    margin-bottom: 14px;
+}
+
+.card .img-wrap {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.card .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.card a {
+    display: inline-block;
+    background: #e0d2bf;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 10px 24px;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.card a:hover {
+    background: #2d3e29;
+}
 
 /*  Transiciones  */
 
@@ -992,5 +1129,19 @@ p{
         font-size: 1.7rem;
         padding-top: 10px;
         padding-left: 200px;
+    }
+
+    .texto3{
+        width: 75%;
+    }
+
+    .galeria{
+        width: 95%;
+    }
+
+    .fila-3,
+    .fila-2 {
+        grid-template-columns: 1fr;
+        max-width: 100%;
     }
 }
