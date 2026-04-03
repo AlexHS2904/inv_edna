@@ -426,7 +426,7 @@ h1 {
 }
 
 .overlay-panel {
-    height: 100vh;
+    min-height: 100vh;
     flex: 1;
     position: relative;
     overflow: hidden;
@@ -1094,6 +1094,7 @@ h1 {
 
     .overlay-panel {
         flex: 1;
+        min-height: 66vh;
         width: 100%;
     }
 
