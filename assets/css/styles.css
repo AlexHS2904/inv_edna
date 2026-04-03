@@ -416,6 +416,9 @@ h1 {
     background-image: url('../img/h4.avif');
     background-size: cover;
     background-position: center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .overlays {
@@ -431,8 +434,9 @@ h1 {
     overflow: hidden;
     transform-origin: center center;
     will-change: transform, opacity;
-    transform: scale(1);
-    opacity: 1;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .panel-img {
@@ -443,6 +447,8 @@ h1 {
     object-fit: cover;
     display: block;
     transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /* 

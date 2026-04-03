@@ -215,7 +215,7 @@ function onScroll() {
     overlays.style.gap = `${gap}px`;
 
     panels.forEach(p => {
-        p.style.transform = `scale(${scale})`;
+        p.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
         p.style.opacity   = opacity;
     });
 }
