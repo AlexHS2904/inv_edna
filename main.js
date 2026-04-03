@@ -203,18 +203,14 @@ function onScroll() {
     const rect = fondo2.getBoundingClientRect();
     const sectionHeight = fondo2.offsetHeight;
 
-    // Qué tan adentro estamos de la sección (0 = entrando, 1 = saliendo)
     const raw = Math.min(Math.max(-rect.top / (sectionHeight - window.innerHeight), 0), 1);
 
-    // Fondo escala suavemente mientras scrolleas la sección
     const bg2Scale = 1 + raw * 0.08;
     bg2.style.transform = `scale(${bg2Scale})`;
 
-    // Los panels solo empiezan a moverse en la segunda mitad del scroll
     const startAt = 0.5;
     const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
-    // Easing suave
     const eased = progress * progress * (3 - 2 * progress);
 
     const scale   = 1 - eased * 0.25;
