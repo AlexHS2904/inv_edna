@@ -425,6 +425,7 @@ h1 {
 }
 
 .overlay-panel {
+    height: 100vh;
     flex: 1;
     position: relative;
     overflow: hidden;
@@ -984,6 +985,7 @@ h1 {
         flex-direction: column;
         height: auto;
         overflow-x: clip;
+        min-height: 100vh;
     }
 
     .nuestra {
