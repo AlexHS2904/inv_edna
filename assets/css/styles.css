@@ -1,4 +1,4 @@
-/* ── Reset ── */
+/*  Reset  */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -18,16 +18,17 @@ a {
     text-decoration: none;
 }
 
-/* ── Fuentes ── */
+/*  Fuentes  */
 
 @font-face {
     font-family: 'Amalfi';
     src: url('../fonts/Amalfi Coast.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
-/* ── Variables ── */
+/*  Variables  */
 
 :root {
     --font-principal:  'Cormorant', serif;
@@ -42,9 +43,9 @@ a {
     --tracking-titulos: 3px;
 }
 
-/* ────────────────────────────────────────
+/* 
    HERO — tres paneles
-──────────────────────────────────────── */
+ */
 
 .contenedor_fondo {
     display: flex;
@@ -98,7 +99,7 @@ a {
         url('../img/DSC_4819.avif');
 }
 
-/* ── Tipografía hero ── */
+/*  Tipografía hero  */
 
 h1 {
     position: relative;
@@ -153,7 +154,7 @@ h1 {
     text-align: center;
 }
 
-/* ── Countdown ── */
+/*  Countdown  */
 
 #countdown,
 #countdown-mobile {
@@ -220,9 +221,9 @@ h1 {
     animation: fadeIn 1.5s ease;
 }
 
-/* ────────────────────────────────────────
+/* 
    SAVE THE DATE
-──────────────────────────────────────── */
+ */
 
 #save {
     display: flex;
@@ -361,7 +362,7 @@ h1 {
     line-height: 2.5;
 }
 
-/* ── Padres ── */
+/*  Padres  */
 
 .contenedor_padres {
     display: flex;
@@ -386,9 +387,9 @@ h1 {
     font-family: var(--font-principal);
 }
 
-/* ────────────────────────────────────────
+/* 
    FONDO 2 — parallax panels
-──────────────────────────────────────── */
+ */
 
 #fondo2 {
     height: 100vh;
@@ -433,9 +434,9 @@ h1 {
     display: block;
 }
 
-/* ────────────────────────────────────────
+/* 
    ITINERARIO
-──────────────────────────────────────── */
+ */
 
 .wt-section {
     width: 100%;
@@ -672,9 +673,9 @@ h1 {
     width: 10rem;
 }
 
-/* ────────────────────────────────────────
+/* 
    FONDO 3
-──────────────────────────────────────── */
+ */
 
 #fondo3 {
     overflow-x: hidden;
@@ -773,9 +774,9 @@ h1 {
     width: 16rem;
 }
 
-/* ────────────────────────────────────────
+/* 
    FONDO 4
-──────────────────────────────────────── */
+ */
 
 #fondo4 {
     padding-top: 4.5rem;
@@ -791,9 +792,9 @@ h1 {
     background-repeat: no-repeat;
 }
 
-/* ────────────────────────────────────────
+/* 
    HOSPEDAJE
-──────────────────────────────────────── */
+ */
 
 #hospedaje {
     overflow: hidden;
@@ -879,9 +880,9 @@ h1 {
     background: #2d3e29;
 }
 
-/* ────────────────────────────────────────
+/* 
    FONDO 5
-──────────────────────────────────────── */
+ */
 
 #fondo5 {
     overflow: hidden;
@@ -893,9 +894,9 @@ h1 {
     background-repeat: no-repeat;
 }
 
-/* ────────────────────────────────────────
+/* 
    CONFIRMACIÓN
-──────────────────────────────────────── */
+ */
 
 #confirmacion {
     display: flex;
@@ -923,9 +924,9 @@ h1 {
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* ────────────────────────────────────────
+/* 
    ANIMACIONES
-──────────────────────────────────────── */
+ */
 
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -952,9 +953,9 @@ h1 {
     transform: translateY(0);
 }
 
-/* ────────────────────────────────────────
+/* 
    MOBILE
-──────────────────────────────────────── */
+ */
 
 @media (max-width: 480px) {
 
