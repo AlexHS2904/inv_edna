@@ -443,9 +443,10 @@ h1 {
     overflow: hidden;
     transform-origin: center center;
     will-change: transform, opacity;
-    transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
 }
 
 .panel-img {
