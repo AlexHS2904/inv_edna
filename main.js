@@ -202,13 +202,13 @@ function onScroll() {
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const raw       = scrollY / maxScroll;
 
-    const bg2Scale = 1 + raw * 0.08;
+    const bg2Scale = 1 + raw * 0.1;
     bg2.style.transform = `scale(${bg2Scale})`;
 
-    const startAt  = 0.2;
+    const startAt  = 0.1;
     const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
-    const scale   = 1 - progress * 0.6;
+    const scale   = 1 - progress * 0.7;
     const opacity = 1 - progress * 0.35;
     const gap     = progress * 2;
 
