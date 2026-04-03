@@ -4,32 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edna y Roberto</title>
-
-    <!-- Estilos -->
-    <link rel="preload" href="assets/css/styles.css" as="style" onload="this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="assets/css/styles.css">
-    </noscript>
-
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600&family=Cormorant:wght@400;600&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    
+
 <main id="main">
     <div class="contenedor_fondo">
 
-        <!-- Panel 1 -->
         <div class="fondo fondo--primero">
             <div class="bg imagen1"></div>
             <div class="nuestra fade">Nuestra Boda</div>
         </div>
 
-        <!-- Panel 2 -->
         <div class="fondo fondo--principal">
             <div class="bg imagen2"></div>
             <div class="texto_encima">
@@ -47,7 +37,6 @@
             </div>
         </div>
 
-        <!-- Panel 3 -->
         <div class="fondo fondo--tercero">
             <div class="bg imagen3"></div>
         </div>
@@ -55,297 +44,230 @@
     </div>
 </main>
 
-    <section id="save">
+<section id="save">
 
-        <div class="cancion">
-            <p class="titulo">
-                Sparks - Coldplay
-            </p>
-            <div class="barra">
-                <img src="assets/img/music-notes-svgrepo-com (2).svg" alt="Notes Svg" class="notas">
-                <button id="btn-audio" aria-label="Reproducir música">
-                    <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
-                        <path d="M8 5v14l11-7z"/>
-                    </svg>
-                    <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style="display:none">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                </button>
-
-                <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" preload="none"></audio>
-
-                <div class="progress-container" id="progressContainer">
-                    <div class="progress" id="progress"></div>
-                </div>
+    <div class="cancion">
+        <p class="titulo">Sparks - Coldplay</p>
+        <div class="barra">
+            <img src="assets/img/music-notes-svgrepo-com (2).svg" alt="Notes Svg" class="notas">
+            <button id="btn-audio" aria-label="Reproducir música">
+                <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+                <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style="display:none">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+            </button>
+            <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" preload="none"></audio>
+            <div class="progress-container" id="progressContainer">
+                <div class="progress" id="progress"></div>
             </div>
         </div>
+    </div>
 
-        <div class="texto fade">
-            <p>
-            El día más esperado de nuestras vidas finalmente ha llegado;
-            acompáñennos en nuestra boda y sean parte de nuestra historia de amor.
-        </p>
+    <div class="texto fade">
+        <p>El día más esperado de nuestras vidas finalmente ha llegado; acompáñennos en nuestra boda y sean parte de nuestra historia de amor.</p>
+    </div>
+
+    <div class="texto2 fade">
+        <p>SAVE <span class="the">the</span> DATE <br> <span class="date">06 • DICIEMBRE • 2026</span></p>
+    </div>
+
+    <div class="boton_add fade">
+        <a href="assets/ics/evento.ics" download>
+            <button class="add_event">Agendar evento</button>
+        </a>
+    </div>
+
+    <div class="texto fade">
+        <p>CON LA BENDICIÓN DE DIOS Y EL AMOR DE <br> <span class="padres">nuestros padres</span></p>
+    </div>
+
+    <div class="contenedor_padres fade">
+        <div class="paternos">
+            <p class="nombres_padres">Víctor Torres Rosales <br> Maribel Colín Guadarrama</p>
         </div>
-
-        <div class="texto2 fade">
-            <p>
-            SAVE <span class="the">the</span> DATE <br> <span class="date"> 06 • DICIEMBRE • 2026 </span>
-            </p>
+        <div class="ipsilon2">
+            <p>&</p>
         </div>
-
-        <div class="boton_add fade">
-            <a href="assets/ics/evento.ics" download>
-                <button class="add_event">Agendar evento</button>
-            </a>
+        <div class="maternos">
+            <p class="nombres_padres">Sergio Rojo Medina <br> Blanca Aracely Castillo Alcantar</p>
         </div>
-        
+    </div>
 
-        <div class="texto fade">
-            <p>CON LA BENDICIÓN DE DIOS Y EL AMOR DE <br> <span class="padres">nuestros padres</span></p>
-        </div>
+</section>
 
-        <div class="contenedor_padres fade">
-            <div class="paternos">
-                <p class="nombres_padres">
-                    Víctor Torres Rosales
-                    <br>
-                    Maribel Colín Guadarrama
-                </p>
+<section id="fondo2">
+    <div class="scene">
+        <div class="bg2"></div>
+        <div class="overlays">
+            <div class="overlay-panel" id="p1">
+                <img class="panel-img" src="assets/img/DSC_4817.avif" alt="">
             </div>
-            <div class="ipsilon2">
-                <p class="ipsilon2"> &</p>
+            <div class="overlay-panel" id="p2">
+                <img class="panel-img" src="assets/img/DSC_4819.avif" alt="">
             </div>
-            <div class="maternos">
-                <p class="nombres_padres">
-                    Sergio Rojo Medina
-                    <br>
-                    Blanca Aracely Castillo Alcantar
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="fondo2">
-
-        <div class="scene">
-            <div class="bg2"></div>
-
-            <div class="overlays">
-                <div class="overlay-panel" id="p1">
-                    <img class="panel-img" src="assets/img/DSC_4817.avif" alt="">
-                </div>
-                <div class="overlay-panel" id="p2">
-                    <img class="panel-img" src="assets/img/DSC_4819.avif" alt="">
-                </div>
-                <div class="overlay-panel" id="p3">
-                    <img class="panel-img" src="assets/img/DSC_4821.avif" alt="">
-                </div>
+            <div class="overlay-panel" id="p3">
+                <img class="panel-img" src="assets/img/DSC_4821.avif" alt="">
             </div>
         </div>
+    </div>
+</section>
 
-    </section>
+<section class="wt-section">
 
-    <section class="wt-section">
+    <p class="it fade">Itinerario</p>
 
-        <p class="it fade">Itinerario</p>
+    <div class="wt-wrapper fade">
+        <div class="wt-line-right"></div>
 
-        <div class="wt-wrapper fade">
-
-            <div class="wt-line-right"></div>
-
-            <div class="wt-item wt-item-top">
+        <div class="wt-item wt-item-top">
             <div class="wt-icon">
                 <img src="assets/img/iglesia.png" alt="">
             </div>
             <p class="wt-title">CEREMONIA<br>RELIGIOSA</p>
             <p class="wt-time">1:00 p.m.</p>
-            </div>
+        </div>
 
-            <div class="wt-item wt-item-bottom">
+        <div class="wt-item wt-item-bottom">
             <div class="wt-icon">
                 <img src="assets/img/copas.png" alt="">
             </div>
             <p class="wt-title">RECEPCIÓN</p>
             <p class="wt-time">3:00 p.m.</p>
-            </div>
-
         </div>
+    </div>
 
-        <div class="ubicaciones fade">
-            <div class="ubi iglesia">
-                <p>Parroquia de Nuestra <br> Señora del Camino</p>
-                <a href="https://maps.app.goo.gl/MYBrMDmNkZjhZBfR7" class="ver_ubi" target="_blank" rel="noopener noreferrer"> Ver ubicación</a>
-            </div>
-            <div class="ubi jardin">
-                <p> Hacienda San Jose Actipan</p>
-                <a href="https://maps.app.goo.gl/1ap1JUhBShkG9qN16" class="ver_ubi" target="_blank" rel="noopener noreferrer"> Ver ubicación</a>
-            </div>
+    <div class="ubicaciones fade">
+        <div class="ubi iglesia">
+            <p>Parroquia de Nuestra <br> Señora del Camino</p>
+            <a href="https://maps.app.goo.gl/MYBrMDmNkZjhZBfR7" class="ver_ubi" target="_blank" rel="noopener noreferrer">Ver ubicación</a>
         </div>
-
-    </section>
-
-    <section id="code">
-
-        <p class="texto fade-slide" style="font-size: 2.4rem; letter-spacing: 2.5px;">
-            DRESS CODE
-        </p>
-
-        <p class="the fade-slide" style="color: var(--color-secundario); font-size: 1.7rem;">
-            Etiqueta
-        </p>
-
-        <div class="hym">
-            <p>Hombres: Traje completo</p>
-            <img src="assets/img/etiqueta.png" alt="" class="fade-slide">
-            <p>Mujeres: Vestido largo</p>
+        <div class="ubi jardin">
+            <p>Hacienda San Jose Actipan</p>
+            <a href="https://maps.app.goo.gl/1ap1JUhBShkG9qN16" class="ver_ubi" target="_blank" rel="noopener noreferrer">Ver ubicación</a>
         </div>
+    </div>
 
-        <div class="no">
-            <p class="the fade-slide" style="color: var(--color-secundario); font-size: 1.7rem;">
-                Consideraciones
-            </p>
+</section>
 
-            <p class="texto fade-slide" style="font-size: 1.4rem;">
-                Aunque amamos a los pequeños, este será un evento exclusivo para adultos. Agradecemos su comprensión.
-            </p>
-            
-            <img src="assets/img/noniños.png" alt="" class="noniños fade-slide">
-        </div>
+<section id="code">
 
-    </section>
+    <p class="texto fade-slide" style="font-size: 2.4rem; letter-spacing: 2.5px;">DRESS CODE</p>
+    <p class="the fade-slide" style="color: var(--color-secundario); font-size: 1.7rem;">Etiqueta</p>
 
-    <section id="fondo3">
-    </section>
+    <div class="hym">
+        <p>Hombres: Traje completo</p>
+        <img src="assets/img/etiqueta.png" alt="" class="fade-slide">
+        <p>Mujeres: Vestido largo</p>
+    </div>
 
-    <section id="historia">
+    <div class="no">
+        <p class="the fade-slide" style="color: var(--color-secundario); font-size: 1.7rem;">Consideraciones</p>
+        <p class="texto fade-slide" style="font-size: 1.4rem;">Aunque amamos a los pequeños, este será un evento exclusivo para adultos. Agradecemos su comprensión.</p>
+        <img src="assets/img/noniños.png" alt="" class="noniños fade-slide">
+    </div>
 
-        <p class="titulo2">
-            HISTORIA DE
-            <span class="amor">amor</span>
-        </p>
+</section>
 
-        <p class="texto3 fade">
-            Nuestra historia comenzó en la iglesia, ahí nos conocimos, aunque fue tiempo después, en la prepa, cuando decidimos darnos la oportunidad de caminar despacio, dejando que nuestra relación creciera con paciencia y confianza.
-        </p>
+<section id="fondo3"></section>
 
-        <p class="texto3 fade">
-            Durante 10 años hemos compartido risas, sueños, diferencias y aprendizajes, pero sobre todo, mucho amor. Como toda historia real, también hubo momentos difíciles, pero nunca nos soltamos; al contrario, cada experiencia nos enseñó a complementarnos, a apoyarnos y a avanzar siempre juntos.
-        </p>
+<section id="historia">
 
-        <p class="texto3 final fade">
-            Hoy, después de una década de elegirnos cada día, y con Dios como guía de nuestro camino, celebramos que nuestra historia continúa. Con el corazón lleno de gratitud y amor, decidimos unir nuestras vidas y comenzar juntos esta nueva etapa, tomados de la mano, para siempre.
-        </p>
+    <p class="titulo2">HISTORIA DE <span class="amor">amor</span></p>
 
-        <div class="galeria fade-slide">
-            <img class="foto-1" src="assets/img/DSC_4817.avif" alt="">
-            <img class="foto-2" src="assets/img/DSC_4819.avif" alt="">
-            <img class="foto-3" src="assets/img/DSC_4821.avif" alt="">
-            <img class="foto-4" src="assets/img/DSC_4826.avif" alt="">
-            <img class="foto-5" src="assets/img/DSC_5182.avif" alt="">
-        </div>
-        
-    </section>
+    <p class="texto3 fade">Nuestra historia comenzó en la iglesia, ahí nos conocimos, aunque fue tiempo después, en la prepa, cuando decidimos darnos la oportunidad de caminar despacio, dejando que nuestra relación creciera con paciencia y confianza.</p>
 
-    <section id="sobres">
+    <p class="texto3 fade">Durante 10 años hemos compartido risas, sueños, diferencias y aprendizajes, pero sobre todo, mucho amor. Como toda historia real, también hubo momentos difíciles, pero nunca nos soltamos; al contrario, cada experiencia nos enseñó a complementarnos, a apoyarnos y a avanzar siempre juntos.</p>
 
-        <p class="texto fade" style="font-size: 1.8rem; letter-spacing: 2.5px;">
-            Lluvia de sobres
-        </p>
+    <p class="texto3 final fade">Hoy, después de una década de elegirnos cada día, y con Dios como guía de nuestro camino, celebramos que nuestra historia continúa. Con el corazón lleno de gratitud y amor, decidimos unir nuestras vidas y comenzar juntos esta nueva etapa, tomados de la mano, para siempre.</p>
 
-        <img src="assets/img/sobres.png" alt="" class="fade">
+    <div class="galeria fade-slide">
+        <img class="foto-1" src="assets/img/DSC_4817.avif" alt="">
+        <img class="foto-2" src="assets/img/DSC_4819.avif" alt="">
+        <img class="foto-3" src="assets/img/DSC_4821.avif" alt="">
+        <img class="foto-4" src="assets/img/DSC_4826.avif" alt="">
+        <img class="foto-5" src="assets/img/DSC_5182.avif" alt="">
+    </div>
 
-        <p class="texto3 final fade">
-            Su presencia es nuestro mayor regalo. Si desean acompañarlo con un detalle,
-            agradecemos una lluvia de sobres.
-        </p>
+</section>
 
-    </section>
+<section id="sobres">
 
-    <section id="fondo4">
-        <div></div>
-    </section>
+    <p class="texto fade" style="font-size: 1.8rem; letter-spacing: 2.5px;">Lluvia de sobres</p>
+    <img src="assets/img/sobres.png" alt="" class="fade">
+    <p class="texto3 final fade">Su presencia es nuestro mayor regalo. Si desean acompañarlo con un detalle, agradecemos una lluvia de sobres.</p>
 
-    <section id="hospedaje">
-        <p class="texto fade" style="font-size: 1.8rem; letter-spacing: 2.5px;">
-            OPCIONES DE HOSPEDJAE
-        </p>
+</section>
 
-        <div class="hoteles">
+<section id="fondo4">
+    <div></div>
+</section>
 
-            <div class="fila fila-3">
+<section id="hospedaje">
 
-                <div class="card fade-slide">
+    <p class="texto fade" style="font-size: 1.8rem; letter-spacing: 2.5px;">OPCIONES DE HOSPEDAJE</p>
+
+    <div class="hoteles">
+
+        <div class="fila fila-3">
+            <div class="card fade-slide">
                 <h2>Hotel Suites Regente</h2>
                 <div class="img-wrap">
-                    <img src="assets/img/regente.avif" alt="Hotel Seven Crown Malecón">
+                    <img src="assets/img/regente.avif" alt="Hotel Suites Regente">
                 </div>
                 <p>Av. 5 de Mayo 1618, Centro, 72810 San Andrés Cholula, Pue.</p>
                 <a href="https://maps.app.goo.gl/KBrJubSgqGitxECY9" target="_blank" rel="noopener noreferrer">VER UBICACIÓN</a>
-                </div>
-
-                <div class="card fade-slide">
+            </div>
+            <div class="card fade-slide">
                 <h2>Hotel Posada Señorial</h2>
                 <div class="img-wrap">
                     <img src="assets/img/señorial.avif" alt="Hotel Posada Señorial">
                 </div>
                 <p>Av. 5 de Mayo 1400, San Juan Aquiahuac, 72810 San Andrés Cholula, Pue.</p>
                 <a href="https://maps.app.goo.gl/N4GZDNNkVFuiZQYX9" target="_blank" rel="noopener noreferrer">VER UBICACIÓN</a>
-                </div>
-
-                <div class="card fade-slide">
+            </div>
+            <div class="card fade-slide">
                 <h2>Hotel Tila</h2>
                 <div class="img-wrap">
                     <img src="assets/img/tila.avif" alt="Hotel Tila">
                 </div>
                 <p>Av 2 Ote 411, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 San Pedro Cholula, Pue.</p>
                 <a href="https://maps.app.goo.gl/vdsGk3DcT7UrnhU47" target="_blank" rel="noopener noreferrer">VER UBICACIÓN</a>
-                </div>
-
             </div>
+        </div>
 
-            <div class="fila fila-2">
-
-                <div class="card fade-slide">
+        <div class="fila fila-2">
+            <div class="card fade-slide">
                 <h2>Hotel Estrella de Belem</h2>
                 <div class="img-wrap">
                     <img src="assets/img/belem.avif" alt="Hotel Estrella de Belem">
                 </div>
                 <p>Av 2 Ote 410, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 De San Miguel Tianguisnahuitl, Pue.</p>
                 <a href="https://maps.app.goo.gl/oGRXgaX33s2cWLVj8" target="_blank" rel="noopener noreferrer">VER UBICACIÓN</a>
-                </div>
-
-                <div class="card final fade-slide">
+            </div>
+            <div class="card final fade-slide">
                 <h2>Hotel Fiesta Inn Explanada</h2>
                 <div class="img-wrap">
-                    <img src="assets/img/inn.avif" alt="The Westmarine Waterfront Hotel">
+                    <img src="assets/img/inn.avif" alt="Hotel Fiesta Inn Explanada">
                 </div>
                 <p>Anillo Perif. Ecológico, Santiago Momoxpan, Alvaro Obregón, 72774 San Francisco Ocotlán, Pue.</p>
                 <a href="https://maps.app.goo.gl/GaxnGbdDy8wiz9E26" target="_blank" rel="noopener noreferrer">VER UBICACIÓN</a>
-                </div>
-
             </div>
-
         </div>
 
-    </section>
+    </div>
 
-    <section id="fondo5" class="fade final">
-    </section>
+</section>
 
-    <section id="confirmacion">
-        <p class="texto fade-slide" style="font-size: 2rem; letter-spacing: 2.5px;">
-            CONFIRMACIÓN DE ASISTENCIA
-        </p>
+<section id="fondo5" class="fade final"></section>
 
-        <p class="texto3 fade-slide final">
-            Por favor, apóyanos confirmando tu asistencia  en el siguiente formulario, ya sea que puedas o no acompañarnos.
-        </p>
+<section id="confirmacion">
+    <p class="texto fade-slide" style="font-size: 2rem; letter-spacing: 2.5px;">CONFIRMACIÓN DE ASISTENCIA</p>
+    <p class="texto3 fade-slide final">Por favor, apóyanos confirmando tu asistencia en el siguiente formulario, ya sea que puedas o no acompañarnos.</p>
+    <a href="https://forms.gle/TU_LINK_AQUI" target="_blank" class="btn-confirmar fade-slide">Confirmar asistencia</a>
+</section>
 
-        <a href="https://forms.gle/TU_LINK_AQUI" target="_blank" class="btn-confirmar fade-slide">
-            Confirmar asistencia
-        </a>
-    </section>
-
-    <script src="main.js" defer></script>
+<script src="main.js" defer></script>
 </body>
 </html>
