@@ -194,23 +194,32 @@ const panels = [
 ];
 
 const overlays = document.querySelector('.overlays');
-
 const bg2 = document.querySelector('.bg2');
+const fondo2 = document.querySelector('#fondo2');
 
 function onScroll() {
-    const scrollY   = window.scrollY;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const raw       = scrollY / maxScroll;
+    if (!fondo2 || !bg2) return;
 
-    const bg2Scale = 1 + raw * 0.1;
+    const rect = fondo2.getBoundingClientRect();
+    const sectionHeight = fondo2.offsetHeight;
+
+    // Qué tan adentro estamos de la sección (0 = entrando, 1 = saliendo)
+    const raw = Math.min(Math.max(-rect.top / (sectionHeight - window.innerHeight), 0), 1);
+
+    // Fondo escala suavemente mientras scrolleas la sección
+    const bg2Scale = 1 + raw * 0.08;
     bg2.style.transform = `scale(${bg2Scale})`;
 
-    const startAt  = 0.1;
+    // Los panels solo empiezan a moverse en la segunda mitad del scroll
+    const startAt = 0.5;
     const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
-    const scale   = 1 - progress * 0.7;
-    const opacity = 1 - progress * 0.35;
-    const gap     = progress * 2;
+    // Easing suave
+    const eased = progress * progress * (3 - 2 * progress);
+
+    const scale   = 1 - eased * 0.25;
+    const opacity = 1 - eased * 0.4;
+    const gap     = eased * 12;
 
     overlays.style.gap = `${gap}px`;
 
@@ -221,11 +230,8 @@ function onScroll() {
 }
 
 window.addEventListener('scroll', onScroll, { passive: true });
-
-window.addEventListener('load', () => {
-    // Fuerza recalculo de maxScroll cuando todo está cargado
-    onScroll();
-});
+window.addEventListener('load', onScroll);
+window.addEventListener('resize', onScroll);
 
 //Agendar evento
 
