@@ -426,12 +426,13 @@ h1 {
 }
 
 .overlay-panel {
-    min-height: 100vh;
     flex: 1;
     position: relative;
     overflow: hidden;
     transform-origin: center center;
     will-change: transform, opacity;
+    transform: scale(1);
+    opacity: 1;
 }
 
 .panel-img {
@@ -441,6 +442,7 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+    transform: translateZ(0);
 }
 
 /* 

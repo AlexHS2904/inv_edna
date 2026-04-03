@@ -222,6 +222,11 @@ function onScroll() {
 
 window.addEventListener('scroll', onScroll, { passive: true });
 
+window.addEventListener('load', () => {
+    // Fuerza recalculo de maxScroll cuando todo está cargado
+    onScroll();
+});
+
 //Agendar evento
 
 document.querySelector('.add_event').addEventListener('click', () => {
