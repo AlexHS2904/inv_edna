@@ -89,7 +89,7 @@ a {
 
 .imagen1 {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     aspect-ratio: 75 / 89;
 }
 
@@ -113,20 +113,14 @@ a {
 .imagen2 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
-        url('../img/h2.webp');
-    width: 100%;
-    height: 90vh;
-    aspect-ratio: 75 / 89;
+        url('../img/h2mobile.avif');
 }
 
 .imagen3 {
     background-image:
         linear-gradient(var(--color-overlay), var(--color-overlay)),
-        url('../img/h3.webp');
-        background-position: top;
-    width: 100%;
-    height: 90vh;
-    aspect-ratio: 75 / 89;
+        url('../img/h3mobile.avif');
+    background-position: top;
 }
 
 /*  Tipografía hero  */
@@ -436,7 +430,7 @@ h1 {
 .bg2 {
     position: absolute;
     inset: 0;
-    background-image: url('../img/h4.webp');
+    background-image: url('../img/h13mobile.avif');
     background-size: cover;
     background-position: center;
     transform: translateZ(0);
@@ -619,6 +613,7 @@ h1 {
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(223, 189, 159, 0.435);
+    gap: 1rem;
 }
 
 .ubi::before {
@@ -652,7 +647,7 @@ h1 {
 }
 
 .jardin {
-    background-image: url('../img/sanjose.webp');
+    background-image: url('../img/sanjose.avif');
 }
 
 .ver_ubi {
@@ -722,7 +717,7 @@ h1 {
 
 #fondo3 {
     overflow-x: hidden;
-    background-image: url('../img/h8.webp');
+    background-image: url('../img/h8mobile.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -810,6 +805,7 @@ h1 {
     gap: 1.6rem;
     margin: auto;
     padding-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 #sobres img {
@@ -823,14 +819,13 @@ h1 {
  */
 
 #fondo4 {
-    padding-top: 4.5rem;
     overflow-x: hidden;
     min-height: 80vh;
 }
 
 #fondo4 div {
     min-height: 80vh;
-    background-image: url('../img/save-the-date-25-_1_.webp');
+    background-image: url('../img/h12mobile.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -933,7 +928,7 @@ h1 {
     overflow: hidden;
     width: 100%;
     height: 90vh;
-    background-image: url('../img/h10.webp');
+    background-image: url('../img/h15mobile.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -974,7 +969,7 @@ h1 {
     overflow: hidden;
     width: 100%;
     height: 90vh;
-    background-image: url('../img/h14.webp');
+    background-image: url('../img/h20mobile.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1193,5 +1188,40 @@ h1 {
 
     #fondo4{
         background-position: 70% center;
+    }
+}
+
+@media (min-width: 768px) {
+    .imagen2 {
+        background-image:
+            linear-gradient(var(--color-overlay), var(--color-overlay)),
+            url('../img/h2.avif');
+    }
+
+    .imagen3 {
+        background-image:
+            linear-gradient(var(--color-overlay), var(--color-overlay)),
+            url('../img/h3.avif');
+    }
+
+    .bg2 {
+        background-image: url('../img/h13.avif');
+    }
+
+    #fondo3 {
+        background-image: url('../img/h8.avif');
+    }
+
+    #fondo4{
+        background-image: url('../img/h12.avif');
+    }
+
+    #fondo5{
+        background-image: url('../img/h15.avif');
+        background-position: center 20%;
+    }
+
+    #fondo6{
+        background-image: url('../img/h20.avif');
     }
 }
