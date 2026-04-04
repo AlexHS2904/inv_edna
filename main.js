@@ -4,7 +4,7 @@ const main = document.querySelector("#main");
 const images = document.querySelectorAll(".bg");
 
 let isMobile = window.innerWidth <= 768;
-let total = main.offsetHeight - window.innerHeight;
+let total = 0;
 let rafId = null;
 
 function applyScale() {
@@ -37,7 +37,10 @@ window.addEventListener("scroll", () => {
 if (document.readyState === "complete") {
     applyScale();
 } else {
-    window.addEventListener("load", applyScale);
+    window.addEventListener('load', () => {
+    total = main.offsetHeight - window.innerHeight;
+    onScroll();
+});
 }
 
 //  Mover fecha y countdown según pantalla
