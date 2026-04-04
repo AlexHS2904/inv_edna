@@ -36,11 +36,14 @@ window.addEventListener("scroll", () => {
 
 if (document.readyState === "complete") {
     applyScale();
-} else {
-    window.addEventListener('load', () => {
     total = main.offsetHeight - window.innerHeight;
     onScroll();
-});
+} else {
+    window.addEventListener('load', () => {
+        applyScale();
+        total = main.offsetHeight - window.innerHeight;
+        onScroll();
+    });
 }
 
 //  Mover fecha y countdown según pantalla
@@ -112,9 +115,8 @@ function actualizarValor(id, value) {
     if (!el) return;
     if (el.textContent === value) return;
 
-    el.classList.remove("animate");
-    void el.offsetWidth;
     el.textContent = value;
+    el.classList.remove("animate");
     el.classList.add("animate");
 }
 
