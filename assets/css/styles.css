@@ -425,6 +425,7 @@ h1 {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
+    height: 100vh;
 }
 
 .bg2 {
@@ -443,6 +444,7 @@ h1 {
     position: absolute;
     inset: 0;
     display: flex;
+    inset: 0;
 }
 
 .overlay-panel {
@@ -467,7 +469,6 @@ h1 {
     transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    aspect-ratio: 75 / 89;
 }
 
 /* 
