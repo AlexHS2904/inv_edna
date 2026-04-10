@@ -426,6 +426,7 @@ h1 {
     min-height: 100vh;
     overflow: hidden;
     height: 100vh;
+    background-color: var(--color-fondo);
 }
 
 .bg2 {
