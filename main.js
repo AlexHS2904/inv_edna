@@ -49,7 +49,7 @@ function onScroll() {
     const bg2Scale = 1 + raw * 0.08;
     bg2.style.transform = `scale(${bg2Scale})`;
 
-    const startAt = 0.5;
+    const startAt = 0.2;
     const progress = Math.min(Math.max((raw - startAt) / (1 - startAt), 0), 1);
 
     const eased = progress * progress * (3 - 2 * progress);
