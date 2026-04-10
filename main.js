@@ -1,5 +1,3 @@
-//  Zoom imágenes
-
 const main = document.querySelector("#main");
 const images = document.querySelectorAll(".bg");
 
@@ -25,8 +23,6 @@ window.addEventListener("resize", () => {
     total = main.offsetHeight - window.innerHeight;
     moverContenido();
 });
-
-// ── Galería 2 ──
 
 const panels = [
     document.getElementById('p1'),
@@ -60,13 +56,18 @@ function onScroll() {
 
     overlays.style.gap = `${gap}px`;
 
-    panels.forEach(p => {
-        p.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
-        p.style.opacity   = opacity;
-    });
+    if (progress > 0) {
+        panels.forEach(p => {
+            p.style.transform = `translate3d(0, 0, 0) scale(${scale})`;
+            p.style.opacity = opacity;
+        });
+    } else {
+        panels.forEach(p => {
+            p.style.transform = '';
+            p.style.opacity = '';
+        });
+    }
 }
-
-// ── Listener de scroll unificado ──
 
 function onScrollHandler() {
     applyScale();
@@ -93,8 +94,6 @@ if (document.readyState === "complete") {
     });
 }
 
-// ── Mover fecha y countdown según pantalla ──
-
 function moverContenido() {
     const esMobile = window.innerWidth <= 480;
 
@@ -115,8 +114,6 @@ function moverContenido() {
     }
 }
 
-// ── Transición ──
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -130,8 +127,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".fade, .fade-slide").forEach(el => {
     observer.observe(el);
 });
-
-// ── Countdown ──
 
 const fechaBoda = new Date("2026-12-05T00:00:00").getTime();
 
@@ -167,8 +162,6 @@ function actualizarValor(id, value) {
     el.classList.add("animate");
 }
 
-// ── Audio: pausa y play ──
-
 const audio = document.getElementById('audio');
 const btn = document.getElementById('btn-audio');
 const iconPlay = document.getElementById('icon-play');
@@ -185,8 +178,6 @@ btn.addEventListener('click', () => {
         iconPause.style.display = 'none';
     }
 });
-
-// ── Barra de progreso de música ──
 
 const progress = document.getElementById('progress');
 const progressContainer = document.getElementById('progressContainer');
@@ -227,13 +218,9 @@ document.addEventListener('mousemove', (e) => {
     progress.style.width = percent * 100 + '%';
 });
 
-// ── Agendar evento ──
-
 document.querySelector('.add_event').addEventListener('click', () => {
     window.location.href = '/evento.ics';
 });
-
-// ── Init ──
 
 moverContenido();
 setInterval(actualizarCountdown, 1000);

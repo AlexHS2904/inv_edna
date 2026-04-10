@@ -1207,6 +1207,16 @@ h1 {
 }
 
 @media (min-width: 768px) {
+
+    #fondo2 {
+        min-height: 180vh;
+    }
+
+    .scene {
+        height: 100vh;
+        min-height: 100vh;
+    }
+
     .imagen2 {
         background-image:
             linear-gradient(var(--color-overlay), var(--color-overlay)),
