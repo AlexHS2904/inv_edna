@@ -459,6 +459,19 @@ h1 {
     transform: translate3d(0, 0, 0) scale(1);
 }
 
+.overlay-panel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
 .panel-img {
     position: absolute;
     inset: 0;
@@ -466,6 +479,7 @@ h1 {
     height: 100%;
     object-fit: cover;
     display: block;
+    object-position: center;
     transform: translateZ(0);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
