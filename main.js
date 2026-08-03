@@ -218,10 +218,6 @@ document.addEventListener('mousemove', (e) => {
     progress.style.width = percent * 100 + '%';
 });
 
-document.querySelector('.add_event').addEventListener('click', () => {
-    window.location.href = '/evento.ics';
-});
-
 const circulos = document.querySelectorAll('.color-circle');
 const dressImg = document.getElementById('dress-img');
 
@@ -234,16 +230,28 @@ const imagenesColor = {
     opcion6: 'assets/img/etiqueta6.avif',
 };
 
+// Precarga las 3 imágenes para que el cambio sea instantáneo
+Object.values(imagenesColor).forEach(src => {
+    const img = new Image();
+    img.src = src;
+});
+
 if (dressImg && circulos.length) {
     circulos.forEach(circulo => {
         circulo.addEventListener('click', () => {
+            if (circulo.classList.contains('active')) return;
+
             circulos.forEach(c => c.classList.remove('active'));
             circulo.classList.add('active');
-            dressImg.src = imagenesColor[circulo.dataset.color];
+
+            dressImg.style.opacity = '0';
+            setTimeout(() => {
+                dressImg.src = imagenesColor[circulo.dataset.color];
+                dressImg.style.opacity = '1';
+            }, 300);
         });
     });
 }
-
 moverContenido();
 setInterval(actualizarCountdown, 1000);
 actualizarCountdown();

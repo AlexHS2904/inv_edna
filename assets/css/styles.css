@@ -773,6 +773,10 @@ h1 {
     transition: opacity 0.3s ease;
 }
 
+#dress-img {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
 /* 
    FONDO 3
  */
@@ -790,7 +794,6 @@ h1 {
 
 #historia {
     overflow: hidden;
-    background-color: var(--color-fondo);
     padding-top: 5rem;
     display: flex;
     justify-content: center;
@@ -857,7 +860,6 @@ h1 {
 
 #sobres {
     overflow: hidden;
-    background-color: #eee3d5;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -868,6 +870,12 @@ h1 {
     margin: auto;
     padding-top: 2rem;
     margin-bottom: 5rem;
+
+    background-image: url('../img/fondopapel.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    overflow-x: hidden;
 }
 
 #sobres img {
