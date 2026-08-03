@@ -222,6 +222,28 @@ document.querySelector('.add_event').addEventListener('click', () => {
     window.location.href = '/evento.ics';
 });
 
+const circulos = document.querySelectorAll('.color-circle');
+const dressImg = document.getElementById('dress-img');
+
+const imagenesColor = {
+    opcion1: 'assets/img/etiqueta.avif',
+    opcion2: 'assets/img/etiqueta2.avif',
+    opcion3: 'assets/img/etiqueta3.avif',
+    opcion4: 'assets/img/etiqueta4.avif',
+    opcion5: 'assets/img/etiqueta5.avif',
+    opcion6: 'assets/img/etiqueta6.avif',
+};
+
+if (dressImg && circulos.length) {
+    circulos.forEach(circulo => {
+        circulo.addEventListener('click', () => {
+            circulos.forEach(c => c.classList.remove('active'));
+            circulo.classList.add('active');
+            dressImg.src = imagenesColor[circulo.dataset.color];
+        });
+    });
+}
+
 moverContenido();
 setInterval(actualizarCountdown, 1000);
 actualizarCountdown();
