@@ -667,6 +667,10 @@ h1 {
     max-width: 320px;
 }
 
+.iglesia img{
+    padding-left: 1.7rem;
+}
+
 .texto-ubi {
     color: var(--color-texto);
     font-family: var(--font-principal);
@@ -689,7 +693,7 @@ h1 {
 
 .btn-ubi:hover {
     background-color: var(--color-texto);
-    color: #3b5138;   /* texto verde oscuro sobre el blanco */
+    color: white;
 }
 
 
@@ -1325,4 +1329,26 @@ h1 {
 
     .ubis-row { flex-direction: column; align-items: center; }
     .contenedor_ubis { padding: 2.5rem 1.5rem; }
+}
+
+@media (max-width: 600px) {
+    .ubis-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .iglesia,
+    .salon {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .contenedor_ubis {
+        padding: 2.5rem 1.2rem;
+        width: 92%;
+    }
+
+    .titulo-ubis { font-size: 1.8rem; }
+    .texto-ubi  { font-size: 1.3rem; }
 }
