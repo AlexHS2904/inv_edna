@@ -85,26 +85,39 @@
     <section id="save">
 
         <div class="cancion">
-            <p class="titulo">Sparks - Coldplay</p>
-            <div class="barra">
-                <img src="assets/img/music-notes-svgrepo-com (2).svg" alt="Notes Svg" class="notas" loading="lazy"
-                    width="29" height="29">
-                <button id="btn-audio" aria-label="Reproducir música">
-                    <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        width="30" height="30">
-                        <path d="M8 5v14l11-7z" />
-                    </svg>
-                    <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        width="30" height="30" style="display:none">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
-                    </svg>
-                </button>
-                <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" preload="none"></audio>
-                <div class="progress-container" id="progressContainer">
-                    <div class="progress" id="progress"></div>
-                </div>
-            </div>
+    <p class="texto">Escucha nuestra canción</p>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress" id="progress">
+            <span class="progress-knob"></span>
         </div>
+    </div>
+
+    <div class="controles">
+        <button id="btn-prev" aria-label="Reiniciar canción">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path d="M6 6h2v12H6zM18 6v12l-9-6z" />
+            </svg>
+        </button>
+
+        <button id="btn-audio" aria-label="Reproducir música">
+            <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+                <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30" style="display:none">
+                <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+            </svg>
+        </button>
+
+        <button id="btn-next" aria-label="Ir al final">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
+                <path d="M16 6h2v12h-2zM6 6l9 6-9 6z" />
+            </svg>
+        </button>
+    </div>
+
+    <audio id="audio" src="assets/media/Coldplay - Sparks.mp3" preload="none"></audio>
+</div>
 
         <div class="texto fade">
             <p>El día más esperado de nuestras vidas finalmente ha llegado; acompáñennos en nuestra boda y sean parte de
@@ -230,8 +243,7 @@
             <p class="the fade-slide" style="color: var(--color-secundario); font-size: 1.4rem;">Consideraciones</p>
             <p class="texto fade-slide" style="font-size: 1.2rem;">Aunque amamos a los pequeños, este será un evento
                 exclusivo para adultos. Agradecemos su comprensión.</p>
-            <img src="assets/img/noniños.webp" alt="" class="noniños fade-slide" loading="lazy" width="160"
-                height="160">
+            <img src="assets/img/noniños.avif" alt="" class="noniños fade-slide" loading="lazy" height="120">
         </div>
 
     </section>
@@ -363,7 +375,7 @@
         <p class="texto fade-slide" style="font-size: 2rem; letter-spacing: 2.5px;">CONFIRMACIÓN DE ASISTENCIA</p>
         <p class="texto3 fade-slide final">Por favor, apóyanos confirmando tu asistencia en el siguiente formulario, ya
             sea que puedas o no acompañarnos.</p>
-        <img class="estrella fade-slide" src="assets/img/estrella.webp" alt="">
+        <img class="estrella fade-slide" src="assets/img/estrella.avif" alt="">
         <p class="texto3 texto-estrella fade-slide final">Nos haría muchísima ilusión compartir este día contigo.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSevb0wHYnspyy4U0vBoP5_t3NdAdALt6p4Wv3m2hKMpLj1qEA/viewform?usp=publish-editor"
             target="_blank" class="btn-confirmar fade-slide">Confirmar asistencia</a>
