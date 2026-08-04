@@ -222,21 +222,27 @@ const circulos = document.querySelectorAll('.color-circle');
 const dressImg = document.getElementById('dress-img');
 
 const imagenesColor = {
-    opcion1: 'assets/img/etiqueta.avif',
-    opcion2: 'assets/img/etiqueta2.avif',
-    opcion3: 'assets/img/etiqueta3.avif',
-    opcion4: 'assets/img/etiqueta4.avif',
-    opcion5: 'assets/img/etiqueta5.avif',
-    opcion6: 'assets/img/etiqueta6.avif',
+    opcion1: 'assets/img/etiqueta5.avif',
+    opcion2: 'assets/img/etiqueta6.avif',
+    opcion3: 'assets/img/etiqueta4.avif',
+    opcion4: 'assets/img/etiqueta.avif',
+    opcion5: 'assets/img/etiqueta2.avif',
+    opcion6: 'assets/img/etiqueta3.avif',
 };
 
-// Precarga las 3 imágenes para que el cambio sea instantáneo
 Object.values(imagenesColor).forEach(src => {
     const img = new Image();
     img.src = src;
 });
 
 if (dressImg && circulos.length) {
+
+    const circuloActivo = document.querySelector('.color-circle.active');
+
+    if (circuloActivo) {
+        dressImg.src = imagenesColor[circuloActivo.dataset.color];
+    }
+
     circulos.forEach(circulo => {
         circulo.addEventListener('click', () => {
             if (circulo.classList.contains('active')) return;
@@ -245,6 +251,7 @@ if (dressImg && circulos.length) {
             circulo.classList.add('active');
 
             dressImg.style.opacity = '0';
+
             setTimeout(() => {
                 dressImg.src = imagenesColor[circulo.dataset.color];
                 dressImg.style.opacity = '1';
@@ -252,6 +259,8 @@ if (dressImg && circulos.length) {
         });
     });
 }
+
+
 moverContenido();
 setInterval(actualizarCountdown, 1000);
 actualizarCountdown();

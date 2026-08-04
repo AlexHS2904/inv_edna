@@ -668,7 +668,7 @@ h1 {
 }
 
 .iglesia img{
-    padding-left: 1.7rem;
+    padding-left: 1.2rem;
 }
 
 .texto-ubi {
@@ -783,6 +783,36 @@ h1 {
 #dress-img {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.inspiration-wrapper {
+    position: relative;
+    width: fit-content;
+    margin: 0;
+}
+
+.inspiration-btn {
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.inspiration-btn:hover {
+    transform: translateY(-2px);
+}
+
+.inspiration-btn {
+    display: block;
+    width: 330px;
+    max-width: 90vw;
+    margin: 0 auto;
+    height: fit-content;
+}
+
+.inspiration-btn img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 /* 
    FONDO 3
