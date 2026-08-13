@@ -424,14 +424,14 @@ h1 {
 
 .contenedor_padres {
     display: flex;
-    gap: 2rem;              /* era 3rem */
+    gap: 2rem;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 720px;       /* no se pasa de aquí */
-    margin: 0 auto;         /* centrado */
-    padding: 0 1rem;        /* respiro en los bordes */
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 1rem;
     box-sizing: border-box;
 }
 
@@ -468,12 +468,12 @@ h1 {
 
 .paternos,
 .maternos {
-    flex: 1 1 300px;   /* ancho fijo idéntico para los 4 lados */
+    flex: 1 1 300px;
     min-width: 0;
 }
 
 .ipsilon2 {
-    flex: 0 0 auto;    /* la & se queda en el centro */
+    flex: 0 0 auto;
 }
 
 /* 
@@ -1256,7 +1256,7 @@ h1 {
 
     .nombres_padres {
         padding-top: 0rem;
-        font-size: 0.85rem;
+        font-size: 0.74rem;
     }
 
     .overlays {
