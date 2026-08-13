@@ -737,7 +737,7 @@ h1 {
     text-align: center;
     padding-top: 3rem;
     flex-direction: column;
-    min-height: 700px;
+    min-height: auto;
     gap: 3rem;
     overflow: hidden;
 
@@ -774,11 +774,6 @@ h1 {
     text-align: center;
     flex-direction: column;
     gap: 1.3rem;
-}
-
-.noniños {
-    margin-top: -30px;
-    padding: 1.3rem;
 }
 
 .color-selector {
