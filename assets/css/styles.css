@@ -413,6 +413,8 @@ h1 {
     padding-bottom: 3.8rem;
 }
 
+/*  Padres  */
+
 .padres {
     padding-left: 1.2rem;
     padding-right: 0.2rem;
@@ -420,15 +422,17 @@ h1 {
     line-height: 2.5;
 }
 
-/*  Padres  */
-
 .contenedor_padres {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
+    gap: 2rem;              /* era 3rem */
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 720px;       /* no se pasa de aquí */
+    margin: 0 auto;         /* centrado */
+    padding: 0 1rem;        /* respiro en los bordes */
+    box-sizing: border-box;
 }
 
 .ipsilon2 {
@@ -442,6 +446,34 @@ h1 {
     font-size: 1.8rem;
     color: var(--color-secundario);
     font-family: var(--font-principal);
+}
+
+.contenedor_bend{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: row;
+    padding-bottom: 1.5rem;
+}
+
+.contenedor_pad{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    width: 100%;
+}
+
+.paternos,
+.maternos {
+    flex: 1 1 300px;   /* ancho fijo idéntico para los 4 lados */
+    min-width: 0;
+}
+
+.ipsilon2 {
+    flex: 0 0 auto;    /* la & se queda en el centro */
 }
 
 /* 
@@ -1094,13 +1126,6 @@ h1 {
     background-repeat: no-repeat;
 }
 
-.contenedor_bend{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    padding-bottom: 1.5rem;
-}
 
 /* 
    ANIMACIONES
@@ -1223,19 +1248,20 @@ h1 {
     }
 
     .contenedor_padres {
-        flex-direction: column;
-        gap: 0.5rem;
+        flex-direction: row;
+        gap: 0.8rem;
         padding-bottom: 2rem;
+        justify-content: space-evenly;
     }
 
     .ipsilon2 {
-        font-size: 1.7rem;
+        font-size: 1rem;
         margin: 0;
     }
 
     .nombres_padres {
         padding-top: 0rem;
-        font-size: 1.3rem;
+        font-size: 0.85rem;
     }
 
     .overlays {
