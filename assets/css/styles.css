@@ -474,10 +474,6 @@ h1 {
     flex: 0 0 auto;
 }
 
-.br-chico {
-    display: none;
-}
-
 /* 
    FONDO 2 — parallax panels
  */
@@ -1258,10 +1254,6 @@ h1 {
     .nombres_padres {
         padding-top: 0rem;
         font-size: 0.9rem;
-    }
-
-    .br-chico {
-        display: inline;
     }
 
     .overlays {
