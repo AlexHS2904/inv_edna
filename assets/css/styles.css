@@ -928,21 +928,92 @@ h1 {
     text-align: center;
     flex-direction: column;
     gap: 1.6rem;
-    margin: auto;
-    padding-top: 2rem;
-    margin-bottom: 5rem;
-
+    margin: auto auto 5rem;
     background-image: url('../img/fondopapel.avif');
     background-size: cover;
     background-position: center;
     background-repeat: repeat;
-    overflow-x: hidden;
+    padding-top: 2rem;
 }
 
 #sobres img {
-    margin-top: -1rem;
-    margin-bottom: -3rem;
-    width: 16rem;
+    margin-top: -3rem;
+    margin-bottom: 1rem;
+    width: 22rem;
+}
+
+.sep{
+    height: 4rem;
+    width: 12rem !important;
+    margin-bottom: -1.5rem !important;
+}
+
+.textosobres{
+    font-family: var(--font-principal);
+    color: var(--color-secundario);
+    font-size: 1.1rem;
+    width: 90%;
+    line-height: 1.5;
+}
+
+.titulo_sobres {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mesa {
+    color: #354230;
+    font-family: var(--font-terciaria);
+}
+
+.btn-mesa {
+    position: relative;
+    display: block;
+    width: 19rem;
+    aspect-ratio: 45 / 20;
+    margin: 0;
+    background-image: url('../img/btn_mesa.avif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+    margin-top: -2rem;
+}
+
+.btn-mesa:hover {
+    transform: translateY(-2px);
+}
+
+.btn-mesa-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+    color: var(--color-texto);
+    font-family: var(--font-principal);
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-mesa-arrow {
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+@media (max-width: 480px) {
+    .btn-mesa-texto {
+        font-size: 0.9rem;
+        letter-spacing: 1.5px;
+    }
 }
 
 /* 
