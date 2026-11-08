@@ -222,6 +222,7 @@ const circulos = document.querySelectorAll('.color-circle');
 const dressImg = document.getElementById('dress-img');
 
 const imagenesColor = {
+    opcion0: 'assets/img/etiqueta0.webp',
     opcion1: 'assets/img/etiqueta5.avif',
     opcion2: 'assets/img/etiqueta6.avif',
     opcion3: 'assets/img/etiqueta4.avif',
